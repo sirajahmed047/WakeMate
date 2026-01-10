@@ -20,10 +20,6 @@ const Hero = () => {
                     transition={{ duration: 0.6 }}
                     className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-2xl mx-auto lg:mx-0"
                 >
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-background-surface border border-white/5 backdrop-blur-sm">
-                        <span className="w-2 h-2 rounded-full bg-green-500 mr-2 animate-pulse"></span>
-                        <span className="text-sm font-medium text-text-secondary">AI-Powered Wake Up Calls</span>
-                    </div>
 
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
                         The Alarm You <br />

@@ -36,10 +36,6 @@ const Footer = () => {
 
                 <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-text-muted">
                     <p>&copy; {new Date().getFullYear()} WakeMate Inc. All rights reserved.</p>
-                    <div className="flex items-center gap-2 mt-4 md:mt-0">
-                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span>All Systems Operational</span>
-                    </div>
                 </div>
             </div>
         </footer>
