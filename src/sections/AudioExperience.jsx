@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Play, Pause } from 'lucide-react';
 import Section from '../components/Section';
@@ -18,6 +18,19 @@ const AudioExperience = () => {
             setIsPlaying(!isPlaying);
         }
     };
+
+    // Listen for custom event from Hero section
+    useEffect(() => {
+        const handlePlayEvent = () => {
+            if (audioRef.current) {
+                audioRef.current.play();
+                setIsPlaying(true);
+            }
+        };
+
+        window.addEventListener('play-demo-audio', handlePlayEvent);
+        return () => window.removeEventListener('play-demo-audio', handlePlayEvent);
+    }, []);
 
     // Handle audio ending
     const handleEnded = () => {

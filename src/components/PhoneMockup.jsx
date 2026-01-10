@@ -61,7 +61,13 @@ const PhoneMockup = ({ screen = 'call' }) => {
                                 </div>
 
                                 <div className="flex flex-col items-center gap-2 text-white/80">
-                                    <button className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors animate-pulse">
+                                    <button
+                                        onClick={() => {
+                                            document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' });
+                                            window.dispatchEvent(new CustomEvent('play-demo-audio'));
+                                        }}
+                                        className="w-16 h-16 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors animate-pulse cursor-pointer"
+                                    >
                                         <Phone className="w-8 h-8 text-white fill-current" />
                                     </button>
                                     <span className="text-xs font-medium">Accept</span>
