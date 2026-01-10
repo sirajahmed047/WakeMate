@@ -12,7 +12,7 @@ const Section = ({
     return (
         <section
             id={id}
-            className={twMerge("relative py-20 md:py-32 px-4 md:px-6 overflow-hidden", className)}
+            className={twMerge("relative py-12 md:py-20 px-4 md:px-6 overflow-hidden", className)}
             {...props}
         >
             {/* Optional Background Pattern */}

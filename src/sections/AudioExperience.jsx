@@ -49,7 +49,7 @@ const AudioExperience = () => {
                         <div className="flex-1 text-center md:text-left space-y-6">
                             <h2 className="text-3xl md:text-4xl font-bold leading-tight">
                                 Don't just read about it. <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Listen to the magic.</span>
+                                <span className="text-primary">Listen to the magic.</span>
                             </h2>
                             <p className="text-text-muted text-lg leading-relaxed">
                                 Hear how WakeMate uses natural, encouraging conversation to wake you up feeling refreshed and motivated.
