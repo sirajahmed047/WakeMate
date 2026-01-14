@@ -41,13 +41,17 @@ const PhoneMockup = ({ screen = 'call' }) => {
                         <div className="w-full space-y-6">
                             <div className="flex justify-between w-full px-4">
                                 <div className="flex flex-col items-center gap-2">
-                                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md">
-                                        <span className="text-xs text-white">Remind Me</span>
+                                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/5">
+                                        <div className="flex flex-col items-center">
+                                            <span className="text-[10px] text-white/90 font-medium">Remind Me</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="flex flex-col items-center gap-2">
-                                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md">
-                                        <span className="text-xs text-white">Message</span>
+                                    <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center backdrop-blur-md border border-white/5">
+                                        <div className="flex flex-col items-center">
+                                            <span className="text-[10px] text-white/90 font-medium">Message</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
