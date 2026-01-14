@@ -27,8 +27,9 @@ const Hero = () => {
                     </h1>
 
                     <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-lg">
-                        WakeMate replaces your alarm with an AI that calls you.
-                        Talk to wake up, answer questions, and start your day fully alert.
+                        Traditional alarms are too easy to ignore. WakeMate replaces them with an interactive
+                        AI phone call that cuts through sleep inertia instantly. Chat, solve, and wake up
+                        fully conscious- <b><i>The ultimate cure for heavy sleepers.</i></b>
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
