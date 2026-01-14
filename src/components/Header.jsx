@@ -39,7 +39,6 @@ const Header = () => {
                         <nav className="hidden md:flex items-center space-x-8">
                             <a href="#how-it-works" className="text-sm font-medium text-text-secondary hover:text-white transition-colors">How it Works</a>
                             <a href="#features" className="text-sm font-medium text-text-secondary hover:text-white transition-colors">Features</a>
-                            <a href="#reviews" className="text-sm font-medium text-text-secondary hover:text-white transition-colors">Reviews</a>
                             <Button variant="primary" className="py-2 px-5 text-sm" onClick={() => setIsWaitlistOpen(true)}>Join Waitlist</Button>
                         </nav>
 
@@ -59,7 +58,6 @@ const Header = () => {
                         <nav className="flex flex-col space-y-4">
                             <a href="#how-it-works" className="text-lg font-medium text-text-secondary hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>How it Works</a>
                             <a href="#features" className="text-lg font-medium text-text-secondary hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Features</a>
-                            <a href="#reviews" className="text-lg font-medium text-text-secondary hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Reviews</a>
                             <Button variant="primary" className="w-full justify-center" onClick={() => { setIsMobileMenuOpen(false); setIsWaitlistOpen(true); }}>Join Waitlist</Button>
                         </nav>
                     </div>
