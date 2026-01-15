@@ -5,6 +5,7 @@ import Section from '../components/Section';
 
 const AudioExperience = () => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [activeVoice, setActiveVoice] = useState('sarah');
     const audioRef = useRef(null);
 
     // Toggle Play/Pause
@@ -43,7 +44,7 @@ const AudioExperience = () => {
             {/* Audio Element */}
             <audio
                 ref={audioRef}
-                src="/audio/Demo.mp3"
+                src={activeVoice === 'sarah' ? "/audio/Demo.mp3" : "/audio/Mike_Demo.mp3"}
                 onEnded={handleEnded}
             />
 
@@ -68,22 +69,68 @@ const AudioExperience = () => {
                                 Hear how WakeMate uses natural, encouraging conversation to wake you up feeling refreshed and motivated.
                             </p>
 
-                            <button
-                                onClick={togglePlay}
-                                className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-100 transition-all active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
-                            >
-                                {isPlaying ? (
-                                    <>
-                                        <Pause className="w-5 h-5 fill-current" />
-                                        <span>Pause Demo</span>
-                                    </>
-                                ) : (
-                                    <>
-                                        <Play className="w-5 h-5 fill-current ml-1" />
-                                        <span>Play Sample</span>
-                                    </>
-                                )}
-                            </button>
+                            {/* Voice Selection & Play Button */}
+                            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
+                                {/* Voice Selection Toggles */}
+                                <div className="flex items-center gap-3">
+                                    <span className="text-sm font-medium text-text-muted">Select Voice:</span>
+                                    <div className="flex bg-gray-100/50 p-1 rounded-full border border-gray-200">
+                                        <button
+                                            onClick={() => {
+                                                if (activeVoice !== 'sarah') {
+                                                    setActiveVoice('sarah');
+                                                    setIsPlaying(false);
+                                                    if (audioRef.current) {
+                                                        audioRef.current.pause();
+                                                        audioRef.current.currentTime = 0;
+                                                    }
+                                                }
+                                            }}
+                                            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeVoice === 'sarah'
+                                                ? 'bg-primary text-white shadow-md'
+                                                : 'text-text-muted hover:text-primary'
+                                                }`}
+                                        >
+                                            Sarah
+                                        </button>
+                                        <button
+                                            onClick={() => {
+                                                if (activeVoice !== 'mike') {
+                                                    setActiveVoice('mike');
+                                                    setIsPlaying(false);
+                                                    if (audioRef.current) {
+                                                        audioRef.current.pause();
+                                                        audioRef.current.currentTime = 0;
+                                                    }
+                                                }
+                                            }}
+                                            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeVoice === 'mike'
+                                                ? 'bg-primary text-white shadow-md'
+                                                : 'text-text-muted hover:text-primary'
+                                                }`}
+                                        >
+                                            Mike
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <button
+                                    onClick={togglePlay}
+                                    className="group inline-flex items-center gap-3 px-8 py-3 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-100 transition-all active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+                                >
+                                    {isPlaying ? (
+                                        <>
+                                            <Pause className="w-5 h-5 fill-current" />
+                                            <span>Pause</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Play className="w-4 h-5 fill-current ml-1" />
+                                            <span>Play</span>
+                                        </>
+                                    )}
+                                </button>
+                            </div>
                         </div>
 
                         {/* Visualizer */}
