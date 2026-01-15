@@ -43,7 +43,7 @@ const AudioExperience = () => {
             {/* Audio Element */}
             <audio
                 ref={audioRef}
-                src="/audio/ElevenLabs_Text_to_Speech_audio.mp3"
+                src="/audio/Demo.mp3"
                 onEnded={handleEnded}
             />
 
