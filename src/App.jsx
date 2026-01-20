@@ -6,19 +6,28 @@ import AudioExperience from './sections/AudioExperience';
 import HowItWorks from './sections/HowItWorks';
 import Features from './sections/Features';
 import CallToAction from './sections/CallToAction';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 function App() {
+  const [currentPage, setCurrentPage] = React.useState('home');
+
   return (
     <div className="min-h-screen bg-background text-text-primary selection:bg-primary/30 selection:text-white overflow-x-hidden">
-      <Header />
+      <Header onNavigate={setCurrentPage} />
       <main>
-        <Hero />
-        <AudioExperience />
-        <HowItWorks />
-        <Features />
-        <CallToAction />
+        {currentPage === 'home' ? (
+          <>
+            <Hero />
+            <AudioExperience />
+            <HowItWorks />
+            <Features />
+            <CallToAction />
+          </>
+        ) : (
+          <PrivacyPolicy />
+        )}
       </main>
-      <Footer />
+      <Footer onNavigate={setCurrentPage} />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import Button from './Button';
 import WaitlistModal from './WaitlistModal';
 import logo from '../assets/logo.png';
 
-const Header = () => {
+const Header = ({ onNavigate }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -18,6 +18,15 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleNavClick = (e, sectionId) => {
+        if (onNavigate) {
+            onNavigate('home');
+            // If we are navigating specific sections, we might want to ensure we are home first
+            // The default href behavior will update the URL hash
+        }
+        setIsMobileMenuOpen(false);
+    };
+
     return (
         <>
             <header
@@ -27,7 +36,7 @@ const Header = () => {
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
-                        <a href="#" className="flex items-center gap-2 group">
+                        <a href="#" onClick={(e) => { e.preventDefault(); onNavigate('home'); }} className="flex items-center gap-2 group">
                             {/*<img src={logo} alt="WakeMate Logo" className="w-8 h-8 object-contain group-hover:scale-105 transition-transform" />*/}
                             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 group-hover:text-white transition-colors">
                                 WakeMate
@@ -36,8 +45,8 @@ const Header = () => {
 
                         {/* Desktop Nav */}
                         <nav className="hidden md:flex items-center space-x-8">
-                            <a href="#how-it-works" className="text-sm font-medium text-text-secondary hover:text-white transition-colors">How it Works</a>
-                            <a href="#features" className="text-sm font-medium text-text-secondary hover:text-white transition-colors">Features</a>
+                            <a href="#how-it-works" onClick={() => onNavigate('home')} className="text-sm font-medium text-text-secondary hover:text-white transition-colors">How it Works</a>
+                            <a href="#features" onClick={() => onNavigate('home')} className="text-sm font-medium text-text-secondary hover:text-white transition-colors">Features</a>
                             <Button variant="primary" className="py-2 px-5 text-sm" onClick={() => setIsWaitlistOpen(true)}>Join Waitlist</Button>
                         </nav>
 
@@ -55,8 +64,8 @@ const Header = () => {
                 {isMobileMenuOpen && (
                     <div className="md:hidden bg-background-surface/95 backdrop-blur-xl border-b border-border p-4 absolute w-full animate-in slide-in-from-top-10 fade-in duration-200">
                         <nav className="flex flex-col space-y-4">
-                            <a href="#how-it-works" className="text-lg font-medium text-text-secondary hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>How it Works</a>
-                            <a href="#features" className="text-lg font-medium text-text-secondary hover:text-white py-2" onClick={() => setIsMobileMenuOpen(false)}>Features</a>
+                            <a href="#how-it-works" className="text-lg font-medium text-text-secondary hover:text-white py-2" onClick={(e) => handleNavClick(e, 'how-it-works')}>How it Works</a>
+                            <a href="#features" className="text-lg font-medium text-text-secondary hover:text-white py-2" onClick={(e) => handleNavClick(e, 'features')}>Features</a>
                             <Button variant="primary" className="w-full justify-center" onClick={() => { setIsMobileMenuOpen(false); setIsWaitlistOpen(true); }}>Join Waitlist</Button>
                         </nav>
                     </div>
