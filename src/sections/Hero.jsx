@@ -23,7 +23,7 @@ const Hero = () => {
 
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
                         The Alarm You <br />
-                        <span className="text-primary">Can't Ignore</span>
+                        <span className="text-primary">won't Ignore</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-text-muted leading-relaxed max-w-lg">

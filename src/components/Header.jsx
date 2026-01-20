@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Button from './Button';
 import WaitlistModal from './WaitlistModal';
+import logo from '../assets/logo.png';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -27,9 +28,7 @@ const Header = () => {
                     <div className="flex items-center justify-between h-16">
                         {/* Logo */}
                         <a href="#" className="flex items-center gap-2 group">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-white font-bold text-lg group-hover:scale-105 transition-transform">
-                                W
-                            </div>
+                            {/*<img src={logo} alt="WakeMate Logo" className="w-8 h-8 object-contain group-hover:scale-105 transition-transform" />*/}
                             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 group-hover:text-white transition-colors">
                                 WakeMate
                             </span>

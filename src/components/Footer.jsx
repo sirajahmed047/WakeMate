@@ -7,11 +7,11 @@ const Footer = () => {
                 <div className="grid md:grid-cols-4 gap-12 mb-16">
                     <div className="col-span-1 md:col-span-2">
                         <a href="#" className="flex items-center gap-2 mb-6 group">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-white font-bold text-lg group-hover:rotate-12 transition-transform">W</div>
+                            {/* <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-primary-light flex items-center justify-center text-white font-bold text-lg group-hover:rotate-12 transition-transform">W</div> */}
                             <span className="text-2xl font-bold text-white">WakeMate</span>
                         </a>
                         <p className="text-text-muted max-w-sm leading-relaxed">
-                            The first alarm clock that calls you to ensure you're awake. Experience the future of waking up.
+                            The only alarm clock that calls you to ensure you're awake. Experience the future of waking up.
                         </p>
                     </div>
 
