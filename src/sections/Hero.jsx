@@ -21,6 +21,8 @@ const Hero = () => {
                     className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 max-w-2xl mx-auto lg:mx-0"
                 >
 
+
+
                     <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]">
                         The Alarm You <br />
                         <span className="text-primary">won't Ignore</span>
@@ -32,28 +34,23 @@ const Hero = () => {
                         fully conscious- <b><i>The ultimate cure for heavy sleepers.</i></b>
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-                        <Button
-                            className="w-full sm:w-auto text-lg h-14 group"
-                            onClick={() => setIsWaitlistOpen(true)}
-                        >
-                            <Mail className="mr-2 -ml-1 h-5 w-5 group-hover:scale-110 transition-transform" />
-                            Join the waitlist
-                        </Button>
-                        <Button variant="secondary" className="w-full sm:w-auto text-lg h-14 group" onClick={() => document.getElementById('how-it-works').scrollIntoView()}>
-                            How it Works <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                    </div>
-
-                    <div className="pt-8 flex items-center gap-4 text-sm text-text-muted">
-                        <div className="flex -space-x-3">
-                            {/* Avatars would ideally be images, using colored circles for now as placeholders */}
-                            <div className="w-10 h-10 rounded-full border-2 border-background bg-zinc-700 flex items-center justify-center text-xs text-white">JD</div>
-                            <div className="w-10 h-10 rounded-full border-2 border-background bg-zinc-600 flex items-center justify-center text-xs text-white">AS</div>
-                            <div className="w-10 h-10 rounded-full border-2 border-background bg-zinc-500 flex items-center justify-center text-xs text-white">MK</div>
-                            <div className="w-10 h-10 rounded-full border-2 border-background bg-primary/20 flex items-center justify-center text-xs text-primary font-bold">+2k</div>
+                    <div className="flex flex-col items-center gap-8 w-full sm:w-auto">
+                        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                            <Button
+                                className="w-full sm:w-auto text-lg h-14 group"
+                                onClick={() => setIsWaitlistOpen(true)}
+                            >
+                                <Mail className="mr-2 -ml-1 h-5 w-5 group-hover:scale-110 transition-transform" />
+                                Join the waitlist
+                            </Button>
+                            <Button variant="secondary" className="w-full sm:w-auto text-lg h-14 group" onClick={() => document.getElementById('how-it-works').scrollIntoView()}>
+                                How it Works <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Button>
                         </div>
-                        <p>Join thousands waking up better</p>
+
+                        <a href="https://www.producthunt.com/products/wakemate-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-wakemate-ai" target="_blank" rel="noopener noreferrer" className="hover:opacity-90 transition-opacity">
+                            <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1065507&theme=neutral&t=1768937490086" alt="WakeMate AI - The AI Alarm that you can talk to | Product Hunt" style={{ width: '250px', height: '54px' }} width="250" height="54" />
+                        </a>
                     </div>
                 </motion.div>
 

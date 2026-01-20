@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Phone, PhoneOff, Mic } from 'lucide-react';
+import logo from '../assets/logo.png';
 
 const PhoneMockup = ({ screen = 'call' }) => {
     return (
@@ -31,8 +32,8 @@ const PhoneMockup = ({ screen = 'call' }) => {
                 {screen === 'call' && (
                     <div className="flex-1 flex flex-col items-center justify-between pt-12 pb-12 px-6">
                         <div className="flex flex-col items-center space-y-2 mt-8">
-                            <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary via-primary-light to-accent flex items-center justify-center mb-4 ring-4 ring-white/10 shadow-[0_0_30px_rgba(255,107,53,0.3)]">
-                                <span className="text-4xl">☀️</span>
+                            <div className="w-24 h-24 rounded-full mb-4 ring-4 ring-white/10 shadow-[0_0_30px_rgba(255,107,53,0.3)] overflow-hidden">
+                                <img src={logo} alt="WakeMate Logo" className="w-full h-full object-cover drop-shadow-lg" />
                             </div>
                             <h3 className="text-2xl font-semibold text-white">WakeMate AI</h3>
                             <p className="text-gray-400 text-sm">Wake Mate Audio...</p>

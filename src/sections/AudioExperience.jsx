@@ -5,7 +5,7 @@ import Section from '../components/Section';
 
 const AudioExperience = () => {
     const [isPlaying, setIsPlaying] = useState(false);
-    const [activeVoice, setActiveVoice] = useState('sarah');
+
     const audioRef = useRef(null);
 
     // Toggle Play/Pause
@@ -44,7 +44,7 @@ const AudioExperience = () => {
             {/* Audio Element */}
             <audio
                 ref={audioRef}
-                src={activeVoice === 'sarah' ? "/audio/Demo.mp3" : "/audio/Mike_Demo.mp3"}
+                src="/audio/Demo.mp3"
                 onEnded={handleEnded}
             />
 
@@ -71,48 +71,7 @@ const AudioExperience = () => {
 
                             {/* Voice Selection & Play Button */}
                             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-6">
-                                {/* Voice Selection Toggles */}
-                                <div className="flex items-center gap-3">
-                                    <span className="text-sm font-medium text-text-muted">Select Voice:</span>
-                                    <div className="flex bg-gray-100/50 p-1 rounded-full border border-gray-200">
-                                        <button
-                                            onClick={() => {
-                                                if (activeVoice !== 'sarah') {
-                                                    setActiveVoice('sarah');
-                                                    setIsPlaying(false);
-                                                    if (audioRef.current) {
-                                                        audioRef.current.pause();
-                                                        audioRef.current.currentTime = 0;
-                                                    }
-                                                }
-                                            }}
-                                            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeVoice === 'sarah'
-                                                ? 'bg-primary text-white shadow-md'
-                                                : 'text-text-muted hover:text-primary'
-                                                }`}
-                                        >
-                                            Sarah
-                                        </button>
-                                        <button
-                                            onClick={() => {
-                                                if (activeVoice !== 'mike') {
-                                                    setActiveVoice('mike');
-                                                    setIsPlaying(false);
-                                                    if (audioRef.current) {
-                                                        audioRef.current.pause();
-                                                        audioRef.current.currentTime = 0;
-                                                    }
-                                                }
-                                            }}
-                                            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${activeVoice === 'mike'
-                                                ? 'bg-primary text-white shadow-md'
-                                                : 'text-text-muted hover:text-primary'
-                                                }`}
-                                        >
-                                            Mike
-                                        </button>
-                                    </div>
-                                </div>
+
 
                                 <button
                                     onClick={togglePlay}
